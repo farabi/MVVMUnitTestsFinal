@@ -8,10 +8,9 @@ target 'MvvmUnitTest' do
   pod 'RxSwift',            '~> 4.3.1'
   pod 'RxCocoa',            '~> 4.3.1'
 
-  target 'MvvmUnitTestUITests' do
-
-  pod 'RxNimble'
-
+  target 'MvvmUnitTestTests' do
+  inherit! :search_paths
+      pod 'RxNimble'
   end
 
 end
