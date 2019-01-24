@@ -23,9 +23,7 @@ class CartoonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.charactersTableView.register
         charactersTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        ///charactersTableView.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: String(describing: UITableViewCell.self))
         self.viewModel = CartoonViewModel(dataProvider: DataProvider())
         self.dataBinding()
     }

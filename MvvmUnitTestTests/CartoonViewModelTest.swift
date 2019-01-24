@@ -7,6 +7,15 @@
 //
 
 import XCTest
+@testable import MvvmUnitTest
+
+ let fakeCartoon:Cartoon = Cartoon(name: "The Marvelous Misadventures of Flapjack",
+                                          logoName: "Flapjack_logo",
+                                          characters: ["Flapjack",
+                                                       "Captain K'nuckles",
+                                                       "Bubbie",
+                                                       "Peppermint Larry",
+                                                       "Doctor Julius Barber"])
 
 class CartoonViewModelTest: XCTestCase {
 
@@ -23,11 +32,6 @@ class CartoonViewModelTest: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+
 
 }
