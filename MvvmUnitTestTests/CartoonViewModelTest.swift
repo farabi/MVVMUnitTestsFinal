@@ -1,14 +1,14 @@
 //
-//  MvvmUnitTestTests.swift
+//  CartoonViewModelTest.swift
 //  MvvmUnitTestTests
 //
-//  Created by Saad El Oulladi on 07/01/2019.
+//  Created by Saad El Oulladi on 24/01/2019.
 //  Copyright © 2019 saadeloulladi. All rights reserved.
 //
 
 import XCTest
 
-class MvvmUnitTestTests: XCTestCase {
+class CartoonViewModelTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
