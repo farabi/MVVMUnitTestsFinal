@@ -7,10 +7,13 @@
 //
 
 import XCTest
+import RxSwift
 import RxNimble
+import Nimble
 
 @testable import MvvmUnitTest
 
+ // MARK: tests fake data
  let fakeCartoon:Cartoon = Cartoon(name: "The Marvelous Misadventures of Flapjack",
                                           logoName: "Flapjack_logo",
                                           characters: ["Flapjack",
@@ -18,14 +21,23 @@ import RxNimble
                                                        "Bubbie",
                                                        "Peppermint Larry",
                                                        "Doctor Julius Barber"])
-
 let fakeDataProvider:DataProvider = FakeDataProvider(fakeCartoon: fakeCartoon)
 
 class CartoonViewModelTest: XCTestCase {
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: Test subject
+    let cartoonViewModel:CartoonViewModel = CartoonViewModel(dataProvider: fakeDataProvider)
+    
+    func testCartoonInformations() {
+        
+        expect(self.cartoonViewModel.name()).first == fakeCartoon.name
+        expect(self.cartoonViewModel.logoName()).first == fakeCartoon.logoName
+    }
+    
+    func testCartoonCharacters() {
+        
+        let charactersResult:[String] = try! self.cartoonViewModel.characters().toBlocking().first()!
+        expect(charactersResult).to(equal(fakeCartoon.characters))
     }
 
 }

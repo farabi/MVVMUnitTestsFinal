@@ -20,7 +20,7 @@ class FakeDataProvider: DataProvider {
             self.fakeCartoon = fakeCartoon
     }
     
-    // An overriden method to
+    // An overridden method to return fake data
     override func getCartoon() -> Observable<Cartoon> {
         return Observable.just(self.fakeCartoon)
     }
